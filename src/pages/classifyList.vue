@@ -70,9 +70,8 @@ export default {
   activated () {
     console.log(this.$getFlash('flashIndex'), 'getFlash2')
   },
-  hasFlash: () => {
-    let index = this.$getFlash('flashIndex')
-    console.log(index, 'index')
+  hasFlash (hasFlash) {
+    console.log(hasFlash, 'index')
   },
   methods: {
     onClick (name, title) {

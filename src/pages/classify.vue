@@ -40,8 +40,7 @@ export default {
     // 返回
     back (name, index) {
       this.active = index
-      this.$setFlash('flashIndex', 0)
-      console.log(this.$getFlash('flashIndex'), 'getFlash1')
+      this.$setFlash('flashIndex', 7568756)
       this.$back()
     }
   }
