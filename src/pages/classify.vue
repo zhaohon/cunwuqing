@@ -30,7 +30,7 @@ export default {
     // 初始化
     async init () {
       try {
-        this.navList = this.$route.query.status
+        this.navList = [{ name: 235 }]
         this.active = this.$route.query.active
         this.status = false
       } catch (e) {
@@ -39,8 +39,9 @@ export default {
     },
     // 返回
     back (name, index) {
-      console.log(name, index)
       this.active = index
+      this.$setFlash('flashIndex', 0)
+      console.log(this.$getFlash('flashIndex'), 'getFlash1')
       this.$back()
     }
   }

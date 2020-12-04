@@ -67,12 +67,18 @@ export default {
   mounted () {
     this.init()
   },
+  activated () {
+    console.log(this.$getFlash('flashIndex'), 'getFlash2')
+  },
+  hasFlash: () => {
+    let index = this.$getFlash('flashIndex')
+    console.log(index, 'index')
+  },
   methods: {
     onClick (name, title) {
       console.log(name, title)
       this.active = name
       this.getArticleList()
-
     },
     // 初始化
     async init () {
@@ -150,11 +156,11 @@ export default {
     changeClassify () {
       console.log('跳转', this.indexTap)
       this.$push({
-        path: '/classify',
-        query: {
-          status: this.navList,
-          active: this.active
-        }
+        path: '/classify'
+        // query: {
+        //   status: this.navList,
+        //   active: this.active
+        // }
       })
     },
     // 加载更多
